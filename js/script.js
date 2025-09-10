@@ -37,3 +37,30 @@ const teamMembers = [
   }
 ];
 
+const cardContainer = document.getElementById("my-card-container");
+let cards = "";
+
+for (let index = 0; index < teamMembers.length; index++) {
+  const member = teamMembers[index];
+
+  cards += createNewCard(member);
+}
+
+cardContainer.innerHTML = cards;
+
+// FUNZIONE PER GENERARE NUOVE CARD
+function createNewCard(objRef) {
+  const { name, role, email, img } = objRef;
+
+  const card = `
+  <div class="card" style="width: 18rem;">
+    <img src="${img}" class="card-img-top" alt="${name}">
+    <div class="card-body">
+      <h5 class="card-title">${name}</h5>
+      <p class="card-text">${role}</p>
+      <p class="card-text">${email}</p>
+    </div>
+  </div>`;
+
+  return card;
+}
