@@ -53,7 +53,7 @@ function createNewCard(objRef) {
   const { name, role, email, img } = objRef;
 
   const card = `
-  <div class="card" style="width: 18rem;">
+  <div class="card col-md-3">
     <img src="${img}" class="card-img-top" alt="${name}">
     <div class="card-body">
       <h5 class="card-title">${name}</h5>
